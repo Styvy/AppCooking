@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NavigationDrawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="shopping_list">Shopping list </string>
+    <string name="kitchen_list">kitchen list </string>
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_eat_next">Eat this!</string>
+    <string name="backdrop_title">LOVE to EAt</string>
+    <string name="backdrop_subtitle">Get some fat!</string>
+    <string name="delete">DELETE</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/acceuil"
+            android:title="Retour a l'acceuil" />
+        <item
+            android:id="@+id/listeCourse"
+            android:title="Liste de courses" />
+        <item
+            android:id="@+id/mesProvisions"
+            android:title="Mes provisions" />
+        <item
+            android:id="@+id/mesRecettes"
+            android:title="Mes recettes" />
+        <item
+            android:id="@+id/creerRecette"
+            android:title="Creer une recette" />
+
+    </group>
+</menu>
