@@ -68,6 +68,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +81,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
         btnFloatScan = findViewById(R.id.fab_scan);
         btnFloatAdd = findViewById(R.id.btnAddCourse);
         btnFloatValider = findViewById(R.id.btnValiderCourse);
+
 
         btnFloatScan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +104,10 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+
+                        /////////////////////
+                        // code btn annuler ici
+
                     }
                 });
 
@@ -109,39 +115,16 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                 builder.setNegativeButton("Valider", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        int selectedId = radioGroup.getCheckedRadioButtonId();
 
-                        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                            @Override
-                            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                                int id = radioGroup.getCheckedRadioButtonId();
-                                switch (id) {
-                                    case R.id.radioFrigo:
-                                        Produit produitToAdd1 = new Produit(edNomDialog.getText().toString(), 0, Integer.parseInt(edQuantiterDialog.getText().toString()), 1);
-                                        ProduitManager.add(ctx, produitToAdd1);
-                                        produitAdapter.add(produitToAdd1);
-                                        produitAdapter.notifyDataSetChanged();
-                                        break;
-                                    case R.id.radioPlacard:
-                                        Produit produitToAdd2 = new Produit(edNomDialog.getText().toString(), 1, Integer.parseInt(edQuantiterDialog.getText().toString()), 1);
-                                        ProduitManager.add(ctx, produitToAdd2);
-                                        produitAdapter.add(produitToAdd2);
-                                        produitAdapter.notifyDataSetChanged();
-                                        break;
-                                    case R.id.radioFreezer:
-                                        Produit produitToAdd3 = new Produit(edNomDialog.getText().toString(), 2, Integer.parseInt(edQuantiterDialog.getText().toString()), 1);
-                                        ProduitManager.add(ctx, produitToAdd3);
-                                        produitAdapter.add(produitToAdd3);
-                                        produitAdapter.notifyDataSetChanged();
-                                        break;
-                                    default:
-                                        // Your code
-                                        break;
-                                }
-                            }
-                        });
+
+                        Produit produitToAdd1 = new Produit(0, edNomDialog.getText().toString(), String.valueOf(selectedId), Integer.parseInt(edQuantiterDialog.getText().toString()), 0, 0, "yes");
+                        produitAdapter = new ProduitAdapter(ctx, R.layout.list_view_produit, ProduitManager.getAll(ctx));
+                        ProduitManager.add(ctx, produitToAdd1);
+                        produitAdapter.add(produitToAdd1);
+                        produitAdapter.notifyDataSetChanged();
                     }
                 });
-
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
@@ -156,6 +139,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                 radioBtnPlacard = dialog.findViewById(R.id.radioPlacard);
                 radioBtnFreezer = dialog.findViewById(R.id.radioFreezer);
                 radioGroup = dialog.findViewById(R.id.radioGroup);
+
 
             }
         });

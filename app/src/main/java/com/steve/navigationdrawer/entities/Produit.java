@@ -4,21 +4,22 @@ public class Produit {
 
     private int id;
     private String nom;
-    private int categorie;
+    private String categorie;
     private int qte;
     private int img;
-    private int codeBar;
-    private int disponible;
+    private int code_bar;
+    private String disponible;
 
-    public Produit(String nom, int categorie, int qte, int disponible) {
+    public Produit(int id, String nom, String categorie, int qte, int img, int code_bar, String disponible) {
         this.id = id;
         this.nom = nom;
         this.categorie = categorie;
         this.qte = qte;
         this.img = img;
-        this.codeBar = codeBar;
+        this.code_bar = code_bar;
         this.disponible = disponible;
     }
+
 
     public int getId() {
         return id;
@@ -36,11 +37,11 @@ public class Produit {
         this.nom = nom;
     }
 
-    public int getCategorie() {
+    public String getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(int categorie) {
+    public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
 
@@ -61,18 +62,18 @@ public class Produit {
     }
 
     public int getCodeBar() {
-        return codeBar;
+        return code_bar;
     }
 
     public void setCodeBar(int codeBar) {
-        this.codeBar = codeBar;
+        this.code_bar = code_bar;
     }
 
-    public int getDisponible() {
+    public String getDisponible() {
         return disponible;
     }
 
-    public void setDisponible(int disponible) {
+    public void setDisponible(String disponible) {
         this.disponible = disponible;
     }
 }

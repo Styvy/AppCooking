@@ -40,10 +40,18 @@ public class ProduitAdapter extends ArrayAdapter<Produit> {
 
         img.setImageResource(e.getImg());
         nom.setText(e.getNom());
-        qteProduit.setText(e.getQte());
+        qteProduit.setText(String.valueOf(e.getQte()));
 
 
         return convertView;
     }
 }
+
+//    private int id;
+//    private String nom;
+//    private String categorie;
+//    private int qte;
+//    private int img;
+//    private int code_bar;
+//    private String disponible;
 

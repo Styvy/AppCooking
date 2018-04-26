@@ -1,5 +1,6 @@
 package com.steve.navigationdrawer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -20,18 +21,24 @@ import com.steve.navigationdrawer.lestabsfragments.FreezerFragment;
 import com.steve.navigationdrawer.lestabsfragments.FrigoFragment;
 import com.steve.navigationdrawer.lestabsfragments.PlacardFragment;
 
+import static com.steve.navigationdrawer.services.ConnectionBd.doesDatabaseExist;
+
 
 public class MainActivity extends AppCompatActivity {
     public FragmentTabHost mTabHost;
     DrawerLayout mDrawerLayout;
     FrameLayout contenuFrame;
+    Context ctx;
+    String database = "sqliteBd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ctx = this;
 
-//        ConnectionBd.addBd(this);
+//        ConnectionBd.addBd(ctx);
+        doesDatabaseExist(ctx, database);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

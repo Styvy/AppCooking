@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class ProduitManager {
 
-
     private static String getAll = " select * from produits ";
     private static String getAllFrigo = " select * from produits where categorie " + " = " + 0;
 
@@ -21,7 +20,7 @@ public class ProduitManager {
         SQLiteDatabase bd = ConnectionBd.getBd(ctx);
         Cursor c = bd.rawQuery(getAll, null);
         while (c.moveToNext()) {
-            retour.add(new Produit(c.getString(0), c.getInt(1), c.getInt(2), c.getInt(3)));
+            retour.add(new Produit(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
         }
         return retour;
     }
@@ -31,7 +30,7 @@ public class ProduitManager {
         SQLiteDatabase bd = ConnectionBd.getBd(ctx);
         Cursor c = bd.rawQuery(getAllFrigo, null);
         while (c.moveToNext()) {
-            retour.add(new Produit(c.getString(0), c.getInt(1), c.getInt(2), c.getInt(3)));
+            retour.add(new Produit(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
         }
         return retour;
     }
@@ -65,17 +64,18 @@ public class ProduitManager {
         cv.put("categorie", produitToAdd.getCategorie());
         cv.put("qte", produitToAdd.getQte());
         cv.put("img", produitToAdd.getImg());
-        cv.put("codeBar", produitToAdd.getCodeBar());
+        cv.put("code_bar", produitToAdd.getCodeBar());
         cv.put("disponible", produitToAdd.getDisponible());
         SQLiteDatabase bd = ConnectionBd.getBd(ctx);
-        long retour = bd.insert("produit", null, cv);
+        long retour = bd.insert("produits", null, cv);
 
+        bd.close();
         return retour > 1;
     }
 
     public static void delete(Context ctx, int id) {
         SQLiteDatabase bd = ConnectionBd.getBd(ctx);
-        bd.delete("produit", "id = ?", new String[]{String.valueOf(id)});
+        bd.delete("produits", "id = ?", new String[]{String.valueOf(id)});
         bd.close();
     }
 
@@ -86,11 +86,12 @@ public class ProduitManager {
         value.put("categorie", etuToMod.getCategorie());
         value.put("qte", etuToMod.getQte());
         value.put("img", etuToMod.getImg());
-        value.put("codeBar", etuToMod.getCodeBar());
+        value.put("code_bar", etuToMod.getCodeBar());
         value.put("disponible", etuToMod.getDisponible());
 
         SQLiteDatabase bd = ConnectionBd.getBd(ctx);
-        bd.update("produit", value, "id = ?", new String[]{String.valueOf(etuToMod.getId())});
+        bd.update("produits", value, "id = ?", new String[]{String.valueOf(etuToMod.getId())});
+        bd.close();
     }
 
 
