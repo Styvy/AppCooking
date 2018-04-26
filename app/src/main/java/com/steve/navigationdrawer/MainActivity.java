@@ -14,8 +14,8 @@ import android.widget.FrameLayout;
 
 import com.steve.navigationdrawer.les_activity_secondaires.CreerRecettes;
 import com.steve.navigationdrawer.les_activity_secondaires.ListeDeCourse;
-import com.steve.navigationdrawer.les_activity_secondaires.MesRecettes;
 import com.steve.navigationdrawer.les_activity_secondaires.MesProvisions;
+import com.steve.navigationdrawer.les_activity_secondaires.MesRecettes;
 import com.steve.navigationdrawer.lestabsfragments.FreezerFragment;
 import com.steve.navigationdrawer.lestabsfragments.FrigoFragment;
 import com.steve.navigationdrawer.lestabsfragments.PlacardFragment;
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        ConnectionBd.addBd(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

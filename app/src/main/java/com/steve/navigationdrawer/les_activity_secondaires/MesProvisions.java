@@ -71,7 +71,7 @@ public class MesProvisions extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(kitchenAdapter);
 
-        prepareProduitData();
+//        prepareProduitData();
 
         try {
             Glide.with(this).load(R.drawable.beans).into((ImageView) findViewById(R.id.backdrop));
@@ -219,57 +219,57 @@ public class MesProvisions extends AppCompatActivity {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
-    private void prepareProduitData() {
-        Produit produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
-        produitList.add(produit);
-
-        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
-        produitList.add(produit);
-
-        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
-        produitList.add(produit);
-
-        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
-        produitList.add(produit);
-
-        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
-        produitList.add(produit);
-
-        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
-        produitList.add(produit);
-
-        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
-        produitList.add(produit);
-
-        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
-        produitList.add(produit);
-
-        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
-        produitList.add(produit);
-
-        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
-        produitList.add(produit);
-
-        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
-        produitList.add(produit);
-
-        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
-        produitList.add(produit);
-
-        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
-        produitList.add(produit);
-
-        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
-        produitList.add(produit);
-
-        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
-        produitList.add(produit);
-
-        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
-        produitList.add(produit);
-
-
-        kitchenAdapter.notifyDataSetChanged();
-    }
+//    private void prepareProduitData() {
+//        Produit produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Potatoes", "Cupboard", 15, R.drawable.potatoes);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Beans", "Cupboard", 1, R.drawable.beans);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Ice Cream", "Freezer", 2, R.drawable.ice_cream);
+//        produitList.add(produit);
+//
+//        produit = new Produit("Milk", "Fridge", 3, R.drawable.milk);
+//        produitList.add(produit);
+//
+//
+//        kitchenAdapter.notifyDataSetChanged();
+//    }
 
 }

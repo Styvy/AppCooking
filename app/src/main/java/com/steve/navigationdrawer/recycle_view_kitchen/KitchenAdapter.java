@@ -39,11 +39,11 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenHolder> {
     @Override
     public void onBindViewHolder(final KitchenHolder holder, int position) {
         Produit produit = produitList.get(position);
-        holder.title.setText(produit.getName());
-        holder.count.setText(produit.getQuantity() + "");
+        holder.title.setText(produit.getNom());
+        holder.count.setText(produit.getQte() + "");
 
         // loading album cover using Glide library
-        Glide.with(ctx).load(produit.getThumbnail()).into(holder.thumbnail);
+        Glide.with(ctx).load(produit.getImg()).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override

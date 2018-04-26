@@ -2,49 +2,77 @@ package com.steve.navigationdrawer.entities;
 
 public class Produit {
 
-    private String name, category;
-    private int quantity, thumbnail;
+    private int id;
+    private String nom;
+    private int categorie;
+    private int qte;
+    private int img;
+    private int codeBar;
+    private int disponible;
 
-    public Produit() {
+    public Produit(String nom, int categorie, int qte, int disponible) {
+        this.id = id;
+        this.nom = nom;
+        this.categorie = categorie;
+        this.qte = qte;
+        this.img = img;
+        this.codeBar = codeBar;
+        this.disponible = disponible;
     }
 
-    public Produit(String name, String category, int quantity, int thumbnail) {
-        this.name = name;
-        this.category = category;
-        this.quantity = quantity;
-        this.thumbnail = thumbnail;
+    public int getId() {
+        return id;
     }
 
-
-    public String getName() {
-        return name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNom() {
+        return nom;
     }
 
-    public String getCategory() {
-        return category;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public int getCategorie() {
+        return categorie;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public void setCategorie(int categorie) {
+        this.categorie = categorie;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public int getQte() {
+        return qte;
     }
 
-    public int getThumbnail() {
-        return thumbnail;
+    public void setQte(int qte) {
+        this.qte = qte;
     }
 
-    public void setThumbnail(int thumbnail) {
-        this.thumbnail = thumbnail;
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
+    }
+
+    public int getCodeBar() {
+        return codeBar;
+    }
+
+    public void setCodeBar(int codeBar) {
+        this.codeBar = codeBar;
+    }
+
+    public int getDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(int disponible) {
+        this.disponible = disponible;
     }
 }

@@ -36,12 +36,12 @@ public class ShoppingAdapter extends RecyclerView.Adapter<MyShoppingHolder> {
     //this method set the data
     public void onBindViewHolder(MyShoppingHolder holder, int position) {
         Produit produit = produitList.get(position);
-        holder.name.setText(produit.getName());
-        holder.category.setText(produit.getCategory());
-        holder.quantity.setText(""+produit.getQuantity());
+        holder.name.setText(produit.getNom());
+        holder.category.setText(produit.getCategorie());
+        holder.quantity.setText("" + produit.getQte());
 
         Glide.with(ctx)
-                .load(produit.getThumbnail())
+                .load(produit.getImg())
                 .into(holder.thumbnail);
 
     }
