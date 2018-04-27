@@ -47,11 +47,5 @@ public class ProduitAdapter extends ArrayAdapter<Produit> {
     }
 }
 
-//    private int id;
-//    private String nom;
-//    private String categorie;
-//    private int qte;
-//    private int img;
-//    private int code_bar;
-//    private String disponible;
+;
 

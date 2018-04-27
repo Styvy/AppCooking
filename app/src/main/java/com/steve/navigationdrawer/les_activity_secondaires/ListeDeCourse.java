@@ -40,14 +40,13 @@ import com.steve.navigationdrawer.recycle_view_shopping.ShoppingAdapter;
 import com.steve.navigationdrawer.recycle_view_shopping.ShoppingListDecoration;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
 
-    private List<Produit> produitList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ShoppingAdapter shoppingAdapter;
     private RecyclerView.LayoutManager produitLayoutManager;
+    ArrayList<Produit> produitList;
 
     TextView text;
     DrawerLayout mDrawerLayout;
@@ -118,7 +117,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                         int selectedId = radioGroup.getCheckedRadioButtonId();
 
 
-                        Produit produitToAdd1 = new Produit(edNomDialog.getText().toString(), String.valueOf(selectedId), Integer.parseInt(edQuantiterDialog.getText().toString()), 0, 0, "yes");
+                        Produit produitToAdd1 = new Produit(edNomDialog.getText().toString(), String.valueOf(selectedId), Integer.parseInt(edQuantiterDialog.getText().toString()), R.drawable.logocuisiner, 0, "yes");
                         produitAdapter = new ProduitAdapter(ctx, R.layout.list_view_produit, ProduitManager.getAll(ctx));
                         ProduitManager.add(ctx, produitToAdd1);
                         produitAdapter.add(produitToAdd1);
@@ -174,6 +173,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
 
 
         //need an adapter ad for ListView
+        produitList = ProduitManager.getAll(ctx);
         shoppingAdapter = new ShoppingAdapter(getApplicationContext(), produitList);
 
         //here we need a layout manager

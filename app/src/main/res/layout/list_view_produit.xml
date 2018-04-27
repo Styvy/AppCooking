@@ -3,13 +3,16 @@
     android:id="@+id/lvProduit"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/imgViewProduit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logocuisiner" />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/insert_photo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,13 +22,22 @@
         <TextView
             android:id="@+id/nomProduit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:gravity="right"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/qteProduit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:gravity="right"
+            android:textColor="#000000"
+            android:textSize="20dp" />
     </LinearLayout>
 
 </LinearLayout>
