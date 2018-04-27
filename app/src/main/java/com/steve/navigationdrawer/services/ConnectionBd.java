@@ -21,6 +21,7 @@ public class ConnectionBd {
     public static SQLiteDatabase getBd(Context ctx) {
         GestionTable gt = new GestionTable(ctx, database, null, version);
         return bd = gt.getWritableDatabase();
+
     }
 
     public static void close() {
@@ -67,9 +68,4 @@ public class ConnectionBd {
         }
     }
 
-    public static boolean doesDatabaseExist(Context context, String bdName) {
-        File bdFile = context.getDatabasePath(bdName);
-        return bdFile.exists();
-
-    }
 }

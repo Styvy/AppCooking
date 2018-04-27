@@ -21,8 +21,6 @@ import com.steve.navigationdrawer.lestabsfragments.FreezerFragment;
 import com.steve.navigationdrawer.lestabsfragments.FrigoFragment;
 import com.steve.navigationdrawer.lestabsfragments.PlacardFragment;
 
-import static com.steve.navigationdrawer.services.ConnectionBd.doesDatabaseExist;
-
 
 public class MainActivity extends AppCompatActivity {
     public FragmentTabHost mTabHost;
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         ctx = this;
 
 //        ConnectionBd.addBd(ctx);
-        doesDatabaseExist(ctx, database);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
