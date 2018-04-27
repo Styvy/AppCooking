@@ -19,7 +19,7 @@ public class ProduitManager {
         String getAll = " select * from produits ";
         Cursor c = bd.rawQuery(getAll, null);
         while (c.moveToNext()) {
-            retour.add(new Produit(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
+            retour.add(new Produit(c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
         }
         bd.close();
         return retour;
@@ -31,7 +31,7 @@ public class ProduitManager {
         String getAllFrigo = " select * from produits where categorie " + " = " + 0;
         Cursor c = bd.rawQuery(getAllFrigo, null);
         while (c.moveToNext()) {
-            retour.add(new Produit(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
+            retour.add(new Produit(c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5), c.getString(6)));
         }
         return retour;
     }
@@ -60,7 +60,6 @@ public class ProduitManager {
 
     public static boolean add(Context ctx, Produit produitToAdd) {
         ContentValues cv = new ContentValues();
-        cv.put("id", produitToAdd.getId());
         cv.put("nom", produitToAdd.getNom());
         cv.put("categorie", produitToAdd.getCategorie());
         cv.put("qte", produitToAdd.getQte());

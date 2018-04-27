@@ -105,7 +105,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                     public void onClick(DialogInterface dialog, int which) {
 
 
-                        /////////////////////
+
                         // code btn annuler ici
 
                     }
@@ -118,7 +118,7 @@ public class ListeDeCourse extends AppCompatActivity implements RecyclerItemTouc
                         int selectedId = radioGroup.getCheckedRadioButtonId();
 
 
-                        Produit produitToAdd1 = new Produit(0, edNomDialog.getText().toString(), String.valueOf(selectedId), Integer.parseInt(edQuantiterDialog.getText().toString()), 0, 0, "yes");
+                        Produit produitToAdd1 = new Produit(edNomDialog.getText().toString(), String.valueOf(selectedId), Integer.parseInt(edQuantiterDialog.getText().toString()), 0, 0, "yes");
                         produitAdapter = new ProduitAdapter(ctx, R.layout.list_view_produit, ProduitManager.getAll(ctx));
                         ProduitManager.add(ctx, produitToAdd1);
                         produitAdapter.add(produitToAdd1);

@@ -10,8 +10,7 @@ public class Produit {
     private int code_bar;
     private String disponible;
 
-    public Produit(int id, String nom, String categorie, int qte, int img, int code_bar, String disponible) {
-        this.id = id;
+    public Produit(String nom, String categorie, int qte, int img, int code_bar, String disponible) {
         this.nom = nom;
         this.categorie = categorie;
         this.qte = qte;
